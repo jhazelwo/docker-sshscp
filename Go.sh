@@ -2,10 +2,21 @@
 
 # Go.sh - Start a container from image.
 
-# Map="-v /opt/local/data:/home/data"
+# Paths to map in the container. (optional)
+#Map="-v /opt/local/data:/home/data"
 
+# Name of the running container. (optional)
 Name="--name=sshscp"
+
+# Image we base the container on.
 Image="jhazelwo/sshscp"
+
+# Port this SSHD is listening on.
 Port=$(grep ^Port files/sshd_config|awk '{print $2}')
-docker run $Name --net=host --expose=$Port $Map $Image
+
+# http://docs.docker.com/engine/reference/run/#network-settings
+Net="--net=host"
+
+#
+docker run $Name $Net --expose=$Port $Map $Image
 
