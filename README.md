@@ -21,6 +21,12 @@ Edit `/etc/authorized_keys` to modify keys after container is running.
 5. Start a container from that image. `./Go.sh`
 
 
+## Config:
+* To use a different port change Port in `./files/sshd_config`
+* To [map a path from host to container](http://docs.docker.com/engine/userguide/dockervolumes/),
+ update $Map variable in `./Go.sh`
+
+
 ## Usage Examples:
 
 ### Put (rsync)

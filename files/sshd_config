@@ -1,7 +1,7 @@
 #
 # http://linux.die.net/man/5/sshd_config
 
-Port 22
+Port 22022
 Protocol 2
 
 SyslogFacility AUTHPRIV
@@ -30,7 +30,7 @@ UseDNS no
 
 Subsystem       sftp    /usr/libexec/openssh/sftp-server
 
-AllowUser data
+AllowUsers data
 PasswordAuthentication no
 PubkeyAuthentication yes
 RequiredAuthentications2 publickey
