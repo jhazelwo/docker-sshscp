@@ -1,0 +1,38 @@
+#
+# http://linux.die.net/man/5/sshd_config
+
+Port 22
+Protocol 2
+
+SyslogFacility AUTHPRIV
+LogLevel INFO
+
+LoginGraceTime 1m
+
+PermitRootLogin no
+
+ChallengeResponseAuthentication no
+KerberosAuthentication no
+GSSAPIAuthentication no
+UsePAM no
+
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
+
+X11Forwarding no
+PrintMotd no
+PrintLastLog no
+ShowPatchLevel no
+
+UseDNS no
+
+Subsystem       sftp    /usr/libexec/openssh/sftp-server
+
+AllowUser data
+PasswordAuthentication no
+PubkeyAuthentication yes
+RequiredAuthentications2 publickey
+AuthorizedKeysFile /etc/authorized_keys
+
