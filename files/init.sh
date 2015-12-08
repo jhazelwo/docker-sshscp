@@ -6,6 +6,7 @@
 # then add them to authorized_keys.
 for this in `ls /root/*.pub`; do
     cat $this >> /etc/authorized_keys
+    echo "" >> /etc/authorized_keys
 done
 
 # You can specify your own host keys by copying them
