@@ -5,8 +5,8 @@ yn(){ echo -n "`date` $@";}
 
 [ "x$1" = "xclean" ] && {
   yo "Deleting sshscp:"
+  kubectl delete services sshscp
   kubectl delete rc sshscp
-  kubectl delete service sshscp
   yn "Waiting for pods to terminate..."
   while [ "`kubectl get pods|egrep ^sshscp`" ]; do sleep 1; echo -n '.'; done
   echo "...done!"
