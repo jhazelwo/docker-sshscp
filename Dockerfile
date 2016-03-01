@@ -13,3 +13,5 @@ ADD ./files/ /root/
 
 CMD /root/init.sh
 
+EXPOSE 22022
+
